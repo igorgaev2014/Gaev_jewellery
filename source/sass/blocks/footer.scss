@@ -1,0 +1,190 @@
+.footer {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000000;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.footer h2 {
+  margin-top: 0;
+  font-family: $ff-secondary;
+  margin-bottom: 19px;
+  letter-spacing: 0.7px;
+
+  @include vp-767 {
+    max-width: 214px;
+  }
+}
+
+.footer p {
+  margin-top: 0;
+  color: $zorba;
+  margin-bottom: 54px;
+  line-height: 22px;
+
+  @include vp-767 {
+    max-width: 226px;
+  }
+}
+
+.footer form {
+  max-width: 500px;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+
+  @include vp-1023 {
+    max-width: none;
+    margin-bottom: 50px;
+  }
+}
+
+.footer input {
+  color: $zorba;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+  font-family: $ff-primary;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.footer button {
+  background-color: transparent;
+  color: #ffffff;
+  padding-right: 40px;
+  border: none;
+  cursor: pointer;
+  background-image: url("../../img/svg/sign-up-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 80px 5px;
+  min-width: 110px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.footer a {
+  color: inherit;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1023 {
+    flex-direction: column;
+    padding-right: 200px;
+  }
+}
+
+.footer__info {
+  flex: 1 1 50%;
+}
+
+.footer__nav {
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: space-between;
+  margin-left: 18px;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.footer__nav li {
+  //margin-bottom: 30px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 30px;
+  }
+}
+
+.footer__nav li:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer__list {
+  padding: 0;
+  margin: 0;
+  //flex: 1 1 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include vp-767 {
+    margin-bottom: 40px;
+  }
+}
+
+.footer__list--social {
+  @include vp-767 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.footer__list--social a {
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+
+  @include vp-767 {
+    margin-right: 30px;
+    padding-left: 15px;
+  }
+}
+
+.footer__link--facebook {
+  background-image: url("../../img/svg/social-facebook.svg");
+}
+
+.footer__link--instagram {
+  background-image: url("../../img/svg/social-instagram.svg");
+}
+
+.footer__link--pinterest {
+  background-image: url("../../img/svg/social-pinterest.svg");
+}
+
+.footer__link--twitter {
+  background-image: url("../../img/svg/social-twitter.svg");
+}
+
+.footer__link span {
+  @include vp-767 {
+    display: none;
+  }
+}
