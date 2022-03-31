@@ -1,6 +1,10 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 
+const body = document.body;
+const header = document.querySelector('.header');
+const navButton = header.querySelector('.main-nav__button');
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +16,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
+
+  function openMenu() {
+    header.classList.remove('header--is-close');
+    header.classList.add('header--is-open');
+    body.classList.add('page__body-lock');
+  }
+
+  function closeMenu() {
+    header.classList.remove('header--is-open');
+    header.classList.add('header--is-close');
+    body.classList.remove('page__body-lock');
+  }
+
+  navButton.addEventListener('click', function () {
+    if (header.classList.contains('header--is-close')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
