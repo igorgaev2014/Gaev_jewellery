@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,6 +14,7 @@
     <link rel="preload" href="fonts/CormorantGaramond-SemiBold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/CormorantGaramond-Italic.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/CormorantGaramond-MediumItalic.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -22,53 +23,131 @@
         <div class="container">
           <nav class="main-nav">
             <button class="main-nav__button" type="button">
-              <span class="main-nav__toggle"></span>
               <span class="visually-hidden">Закрыть меню</span>
             </button>
             <label for="search" class="visually-hidden">Search</label>
             <input type="search" name="search" id="search" placeholder="Type here to search" class="menu">
-            <svg class="main-nav__logo" width="66" height="66" viewBox="0 0 66 66">
-              <use xlink:href="img/sprite_auto.svg#logo"></use>
-            </svg>
-            <a href="#" class="main-nav__login menu">Login</a>
-            <a href="#" class="main-nav__cart">
+            <a class="main-nav__link main-nav__link--logo">
+              <svg width="66" height="66" viewBox="0 0 66 66">
+                <use xlink:href="img/sprite_auto.svg#logo"></use>
+              </svg>
+            </a>
+            <a href="#" class="main-nav__link main-nav__link--login menu">Login</a>
+            <a href="#" class="main-nav__link main-nav__link--cart">
               <svg class="" width="20" height="18" viewBox="0 0 20 18">
                 <use xlink:href="img/sprite_auto.svg#cart"></use>
               </svg>
               <span>Cart 0</span>
             </a>
             <ul class="main-nav__list list-reset menu">
-              <li class="main-nav__item">
-                <a href="#" class="main-nav__link">What's new</a>
+              <li>
+                <a href="#">What's new</a>
               </li>
-              <li class="main-nav__item">
-                <a href="#" class="main-nav__link">Chokers</a>
+              <li>
+                <a href="#">Chokers</a>
               </li>
-              <li class="main-nav__item">
-                <a href="#" class="main-nav__link">Necklaces</a>
+              <li>
+                <a href="#">Necklaces</a>
               </li>
-              <li class="main-nav__item">
-                <a href="#" class="main-nav__link">Rings</a>
+              <li>
+                <a href="#">Rings</a>
               </li>
-              <li class="main-nav__item">
-                <a href="#" class="main-nav__link">Earrings</a>
+              <li>
+                <a href="#">Earrings</a>
               </li>
             </ul>
             <ul class="main-nav__sublist list-reset menu">
-              <li class="main-nav__subitem">
-                <a href="#" class="main-nav__sublink">About CH</a>
+              <li>
+                <a href="#">About CH</a>
               </li>
-              <li class="main-nav__subitem">
-                <a href="#" class="main-nav__sublink">Stores & Hours</a>
+              <li>
+                <a href="#">Stores & Hours</a>
               </li>
-              <li class="main-nav__subitem">
-                <a href="#" class="main-nav__sublink">Contact Us</a>
+              <li>
+                <a href="#">Contact Us</a>
               </li>
             </ul>
           </nav>
         </div>
       </header>
       <main>
+        <section class="intro-index">
+          <h2>Perfection</h2>
+          <p>made to be yours</p>
+        </section>
+        <div class="container">
+          <section class="blog">
+            <h2 class="title">Blog</h2>
+            <a class="outline-link" href="#">Read All</a>
+            <ul class="list-reset">
+              <li>
+                <img src="img/content/index/blog/alex-holyoake-Cg0dPdmy5dE-unsplash-blog-power-desktop.jpg" alt="Care for Jewellery">
+                <div>
+                  <p>September 30, 2019</p>
+                  <h3>How to care for your jewellery</h3>
+                  <a class="outline-link" href="#">Read Article</a>
+                </div>
+              </li>
+              <li>
+                <img src="img/content/index/blog/alex-holyoake-Cg0dPdmy5dE-unsplash-blog-power-desktop.jpg" alt="Care for Jewellery">
+                <div>
+                  <p>September 23, 2019</p>
+                  <h3>How to care for your jewellery</h3>
+                  <a class="outline-link" href="#">Read Article</a>
+                </div>
+              </li>
+              <li>
+                <img src="img/content/index/blog/alex-holyoake-Cg0dPdmy5dE-unsplash-blog-power-desktop.jpg" alt="Care for Jewellery">
+                <div class="">
+                  <p>September 16, 2019</p>
+                  <h3>AW 19 trends</h3>
+                  <a href="#">Read Article</a>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+<!--         <section class="slider">
+          <div class="image-slider swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-slider__image">
+                  <img src="img/content/main/slider/dainty-gold-necklace-desktop.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+        </section> -->
       </main>
       <footer class="footer">
         <div class="footer__container container">

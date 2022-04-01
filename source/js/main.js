@@ -1,7 +1,8 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+//import {swiper as Swiper} from './vendor/swiper.js';
 
-const body = document.body;
+const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const navButton = header.querySelector('.main-nav__button');
 
@@ -16,17 +17,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
+  //new Swiper('.image-slider');
 
   function openMenu() {
     header.classList.remove('header--is-close');
     header.classList.add('header--is-open');
-    body.classList.add('page__body-lock');
+    page.classList.add('overflow');
   }
 
   function closeMenu() {
     header.classList.remove('header--is-open');
     header.classList.add('header--is-close');
-    body.classList.remove('page__body-lock');
+    page.classList.remove('overflow');
   }
 
   navButton.addEventListener('click', function () {

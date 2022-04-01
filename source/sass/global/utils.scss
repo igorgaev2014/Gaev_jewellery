@@ -74,8 +74,24 @@
 .title {
   font-size: 34px;
   line-height: 44px;
+  font-family: $ff-secondary;
+  text-align: center;
+}
+
+.outline-link {
+  font-size: 16px;
+  line-height: 21px;
+  font-family: $ff-primary;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  border-bottom: 1px solid $medium-wood;
 }
 
 body {
   font-family: $ff-primary;
+}
+
+.overflow {
+  overflow: hidden;
 }
