@@ -1,10 +1,11 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-//import {swiper as Swiper} from './vendor/swiper.js';
 
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const navButton = header.querySelector('.main-nav__button');
+
+const accordions = document.querySelectorAll('.faq li');
 
 // ---------------------------------
 
@@ -17,8 +18,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
-  //new Swiper('.image-slider');
 
+
+  // Мобильное меню
   function openMenu() {
     header.classList.remove('header--is-close');
     header.classList.add('header--is-open');
@@ -37,6 +39,22 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       closeMenu();
     }
+  });
+
+  // Аккордеон
+  accordions.forEach(function (accordion) {
+    const tab = accordion.querySelector('.faq h3');
+
+    tab.addEventListener('click', function () {
+      if (accordion.classList.contains('faq--is-open')) {
+        accordion.classList.remove('faq--is-open');
+      } else {
+        accordions.forEach(function (item) {
+          item.classList.remove('faq--is-open');
+        });
+        accordion.classList.add('faq--is-open');
+      }
+    });
   });
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

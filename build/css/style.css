@@ -1039,6 +1039,86 @@ body {
   line-height: 38px;
 }
 
+.faq {
+  padding-top: 65px;
+  padding-bottom: 54px;
+}
+
+.faq h2 {
+  margin: 0;
+  margin-bottom: 48px;
+  letter-spacing: 0.03em;
+}
+
+.faq ul {
+  padding: 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.faq li {
+  padding: 43px 50px 43px 42px;
+  border: 1px solid #a87b62;
+  border-bottom: none;
+  position: relative;
+  width: 100%;
+  max-width: 970px;
+}
+
+.faq li:last-of-type {
+  border-bottom: 1px solid #a87b62;
+}
+
+.faq h3 {
+  font-size: 18px;
+  line-height: 23px;
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq h3::before {
+  position: absolute;
+  content: "";
+  top: 6px;
+  right: -3px;
+  width: 19px;
+  height: 19px;
+  background-image: url("../../img/svg/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+}
+
+.faq p {
+  font-size: 16px;
+  line-height: 21px;
+  max-width: 527px;
+  padding-left: 7px;
+  margin: 8px 0 0;
+  display: none;
+  font-weight: 400;
+}
+
+.faq--is-open p {
+  display: block;
+}
+
+.faq--is-open h3::before {
+  background-image: url("../../img/svg/arrow-up.svg");
+}
+
 .footer {
   font-size: 16px;
   color: #ffffff;
@@ -1394,6 +1474,24 @@ body {
     margin-right: 18px;
   }
 
+  .faq li {
+    padding-left: 49px;
+    padding-top: 44px;
+  }
+
+  .faq h3::before {
+    width: 25px;
+    height: 15px;
+    top: 4px;
+    right: -2px;
+  }
+
+  .faq p {
+    max-width: 529px;
+    padding-left: 0;
+    margin: 26px 0 0;
+  }
+
   .footer {
     padding-top: 50px;
   }
@@ -1497,6 +1595,41 @@ body {
   .intro-index p {
     font-size: 34px;
     margin-right: 0;
+  }
+
+  .faq h2 {
+    margin-bottom: 28px;
+  }
+
+  .faq li {
+    padding-left: 25px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    padding-right: 23px;
+  }
+
+  .faq li:first-of-type h3 {
+    padding-right: 55px;
+  }
+
+  .faq h3 {
+    font-size: 16px;
+    line-height: 22px;
+    padding-right: 70px;
+  }
+
+  .faq h3::before {
+    width: 21px;
+    top: 7px;
+    right: 0px;
+  }
+
+  .faq p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 14px 0 0;
+    max-width: none;
+    padding-right: 34px;
   }
 
   .footer h2 {
