@@ -1,0 +1,17 @@
+.page-main__wrapper {
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100vw;
+    height: 1px;
+    background: $seashell;
+  }
+}

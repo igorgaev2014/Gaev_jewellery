@@ -1,4 +1,4 @@
-.intro-index {
+.intro {
   padding: 180px 0;
   background-color: $medium-wood;
   background-image: url("../../img/content/index/intro/intro-index-desktop@1x.jpg");
@@ -21,7 +21,7 @@
   }
 }
 
-.intro-index h2 {
+.intro h2 {
   text-transform: uppercase;
   font-size: 45px;
   line-height: 58px;
@@ -41,7 +41,7 @@
   }
 }
 
-.intro-index p {
+.intro p {
   font-size: 38px;
   line-height: 44px;
   font-weight: 400;
@@ -55,5 +55,21 @@
   @include vp-767 {
     font-size: 34px;
     margin-right: 0;
+  }
+}
+
+.intro--catalog {
+  padding: 100px 0;
+  background-image: url("../../img/content/catalog/intro/intro-catalog-desktop@1x.jpg");
+
+  @include vp-1023 {
+    background-image: url("../../img/content/catalog/intro/intro-catalog-tablet@1x.jpg");
+    padding-top: 182px;
+    padding-bottom: 184px;
+  }
+
+  @include vp-767 {
+    padding-top: 190px;
+    padding-bottom: 186px;
   }
 }

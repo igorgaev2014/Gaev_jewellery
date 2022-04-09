@@ -80,7 +80,7 @@
 
 .outline-link {
   font-size: 16px;
-  line-height: 21px;
+  line-height: 25px;
   font-family: $ff-primary;
   text-align: center;
   vertical-align: middle;
@@ -94,4 +94,18 @@ body {
 
 .overflow {
   overflow: hidden;
+}
+
+.button {
+  display: block;
+  padding: 24px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  border: 0;
+  cursor: pointer;
+  color: $color-default-white;
+  background: $medium-wood;
 }
