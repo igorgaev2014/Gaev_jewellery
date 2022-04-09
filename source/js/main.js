@@ -1,11 +1,13 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+import './vendor.js';
 
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const navButton = header.querySelector('.main-nav__button');
-
-const accordions = document.querySelectorAll('.faq li');
+// const slider = document.querySelector('.slider');
+const accordion = document.querySelectorAll('.faq li');
+const filter = document.querySelector('.filter');
 
 // ---------------------------------
 
@@ -18,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
-
+  header.classList.remove('header--no-js');
 
   // Мобильное меню
   function openMenu() {
@@ -41,18 +43,21 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+  // filter.classList.remove('filter--no-js');
+
   // Аккордеон
-  accordions.forEach(function (accordion) {
-    const tab = accordion.querySelector('.faq h3');
+  accordion.forEach(function (elem) {
+    const tab = elem.querySelector('.faq h3');
 
     tab.addEventListener('click', function () {
-      if (accordion.classList.contains('faq__item--is-open')) {
-        accordion.classList.remove('faq__item--is-open');
+      if (elem.classList.contains('faq__item--is-open')) {
+        elem.classList.remove('faq__item--is-open');
       } else {
-        accordions.forEach(function (item) {
+        accordion.forEach(function (item) {
           item.classList.remove('faq__item--is-open');
         });
-        accordion.classList.add('faq__item--is-open');
+        elem.classList.add('faq__item--is-open');
       }
     });
   });

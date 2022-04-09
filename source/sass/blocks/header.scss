@@ -34,3 +34,22 @@
     display: none;
   }
 }
+
+.header--no-js .menu {
+  @include vp-1023 {
+    display: block;
+    position: static;
+  }
+}
+
+.header--no-js {
+  @include vp-1023 {
+    background-color: $medium-wood;
+  }
+}
+
+.header--no-js .main-nav {
+  @include vp-1023 {
+    color: $color-default-white;
+  }
+}

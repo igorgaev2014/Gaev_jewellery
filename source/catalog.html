@@ -19,7 +19,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header header--is-close">
+      <header class="header header--is-close header--no-js">
         <div class="container">
           <nav class="main-nav">
             <button class="main-nav__button" type="button">
@@ -76,13 +76,13 @@
           <p>Discover picks of fashion's finest trends in our jewellery catalog</p>
         </section>
         <div class="container page-main__wrapper">
-          <section class="filter">
+          <section class="filter filter--no-js">
             <button class="button filter__button">Filter</button>
             <div class="filter__wrapper">
-              <button class="filter__close" type="button" aria-label="Close filter"></button>
+              <button class="filter__close" type="button"></button>
               <form action="https://echo.htmlacademy.ru" method="get">
-                <div class="filter__accordion accordion">
-                  <div class="filter__type">
+                <ul class="filter__accordion list-reset">
+                  <li class="filter__type">
                     <h3>
                       <button class="filter__type-button accordion__button" type="button">Product</button>
                     </h3>
@@ -104,8 +104,8 @@
                         <label class="filter__label" for="product-earrings">Earrings</label>
                       </li>
                     </ul>
-                  </div>
-                  <div class="filter__type">
+                  </li>
+                  <li class="filter__type filter__type--is-closed">
                     <h3>
                       <button class="filter__type-button accordion__button" type="button">Material</button>
                     </h3>
@@ -119,8 +119,8 @@
                         <label class="filter__label" for="product-silver">Silver</label>
                       </li>
                     </ul>
-                  </div>
-                  <div class="filter__type">
+                  </li>
+                  <li class="filter__type filter__type--is-closed">
                     <h3>
                       <button class="filter__type-button accordion__button" type="button">Collection</button>
                     </h3>
@@ -134,8 +134,8 @@
                         <label class="filter__label" for="collection-dreams">Dreams</label>
                       </li>
                     </ul>
-                  </div>
-                  <div class="filter__type">
+                  </li>
+                  <li class="filter__type">
                     <h3>
                       <button class="filter__type-button accordion__button" type="button">Price</button>
                     </h3>
@@ -158,8 +158,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
                 <div class="filter__form-buttons">
                   <button class="button" type="submit">Apply</button>
                   <button class="button" type="reset">Clear All</button>

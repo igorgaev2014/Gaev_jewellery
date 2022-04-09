@@ -1,6 +1,50 @@
 .filter {
   min-width: 250px;
   margin-right: 50px;
+
+  @include vp-1023 {
+    margin-right: 0;
+  }
+}
+
+.filter button {
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.filter label {
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.filter__wrapper {
+  @include vp-1023 {
+    display: none;
+    background-color: $color-default-white;
+    position: fixed;
+    max-height: calc(100vh - 32px);
+    top: 50%;
+    left: 163px;
+    right: 163px;
+    margin: 0 auto;
+    transform: translate(0, -50%);
+    z-index: 100;
+  }
+}
+
+.filter__accordion {
+  margin: 0;
+  padding: 0;
 }
 
 .filter__button {
@@ -8,6 +52,20 @@
 
   @include vp-1023 {
     display: block;
+    width: 100%;
+    margin-bottom: 49px;
+    padding: 24px;
+    background: $medium-wood;
+    color: $color-default-white;
+    font-family: inherit;
+    border: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 38px;
   }
 }
 
@@ -25,7 +83,8 @@
 }
 
 .filter__type ul {
-  padding: 0 0 15px;
+  padding: 0 0 13px;
+  margin: 0;
 }
 
 .filter__type-button {
@@ -71,19 +130,17 @@ input:checked + .filter__label::before {
   background: $medium-wood;
 }
 
-
-/* .filter__type--closed .filter__content {
+.filter__type--is-closed .filter__content {
   display: none;
-} */
+}
 
 .filter__form-buttons {
-  padding-top: 35px;
+  padding-top: 33px;
 }
 
 .filter__form-buttons button[type="submit"] {
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
-
 
 .filter__form-buttons button[type="reset"] {
   background: $color-default-white;
@@ -156,5 +213,28 @@ input:checked + .filter__label::before {
   background: 0 0;
   border: 0;
   outline: 0;
-  appearance: textfield;
+}
+
+.filter--no-js .filter__wrapper {
+  @include vp-1023 {
+    display: block;
+    position: static;
+    max-height: 100%;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    padding-bottom: 30px;
+  }
+}
+
+.filter--no-js .filter__content {
+  display: block;
+}
+
+.filter--no-js button {
+  &::after {
+    display: none;
+  }
 }
