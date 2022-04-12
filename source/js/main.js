@@ -79,7 +79,7 @@ if (filter) {
 // Слайдер
 
 if (slider) {
-  slider.classList.remove('slider--nojs');
+  slider.classList.remove('slider--no-js');
 
   new Swiper('.swiper-container', {
     mousewheel: true,
