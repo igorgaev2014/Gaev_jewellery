@@ -53,3 +53,14 @@
     color: $color-default-white;
   }
 }
+
+.header--no-js .main-nav__button {
+  display: none;
+}
+
+
+.header--no-js .main-nav__link--cart {
+  @include vp-1023 {
+    stroke: $color-default-white;
+  }
+}

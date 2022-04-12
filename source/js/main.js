@@ -7,23 +7,25 @@ const slider = document.querySelector('.slider');
 const accordion = document.querySelectorAll('.faq li');
 const filter = document.querySelector('.filter');
 const overlay = document.createElement('div');
+const login = document.querySelector('.login');
+const loginButton = document.querySelector('.main-nav__link--login');
 
 overlay.classList.add('overlay');
 header.classList.remove('header--no-js');
 
 // Мобильное меню
 
-function openMenu() {
+const openMenu = () => {
   header.classList.remove('header--is-close');
   header.classList.add('header--is-open');
   page.classList.add('overflow');
-}
+};
 
-function closeMenu() {
+const closeMenu = () => {
   header.classList.remove('header--is-open');
   header.classList.add('header--is-close');
   page.classList.remove('overflow');
-}
+};
 
 navButton.addEventListener('click', function () {
   if (header.classList.contains('header--is-close')) {
@@ -136,3 +138,69 @@ accordion.forEach(function (elem) {
     }
   });
 });
+
+// Логин
+
+if (login) {
+  const loginForm = login.querySelector('form');
+  const loginClose = login.querySelector('.login__close');
+  const loginEmail = login.querySelector('input[type="email"]');
+  const loginPassword = login.querySelector('input[type="password"]');
+
+  let isStorageSupport = true;
+  let storageEmail = '';
+
+  try {
+    storageEmail = localStorage.getItem('user-email');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  if (storageEmail) {
+    loginEmail.value = storageEmail;
+  }
+
+  const openLogin = () => {
+    login.classList.add('login--is-opened');
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    if (!loginEmail.value) {
+      loginEmail.focus();
+    } else {
+      loginPassword.focus();
+    }
+  };
+
+  const closeLogin = () => {
+    login.classList.remove('login--is-opened');
+    document.body.removeChild(overlay);
+    document.body.style.overflow = 'auto';
+  };
+
+  loginButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    openLogin();
+  });
+
+  loginClose.addEventListener('click', () => closeLogin());
+
+  overlay.addEventListener('click', () => closeLogin());
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.key === ('Escape' || 'Esc')) {
+      if (login.classList.contains('login--is-opened')) {
+        evt.preventDefault();
+        closeLogin();
+      }
+    }
+  });
+
+  loginForm.addEventListener('submit', () => {
+    closeLogin();
+
+    if (isStorageSupport) {
+      localStorage.setItem('user-email', loginEmail.value);
+    }
+  });
+}

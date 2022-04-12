@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Jewellery">
-    <title>Jewellery</title>
+    <title>Jewellery - Main</title>
     <link rel="shortcut icon" href="#">
     <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" crossorigin="anonymous">
@@ -24,14 +24,16 @@
             <button class="main-nav__button" type="button">
               <span class="visually-hidden">Закрыть меню</span>
             </button>
-            <label for="search" class="visually-hidden">Search</label>
-            <input type="search" name="search" id="search" placeholder="Type here to search" class="menu">
+            <form action="https://echo.htmlacademy.ru" method="get">
+              <label for="search" class="visually-hidden">Search</label>
+              <input type="search" name="search" id="search" placeholder="Type here to search" class="menu">
+            </form>
             <a class="main-nav__link main-nav__link--logo">
               <svg width="66" height="66" viewBox="0 0 66 66">
                 <use xlink:href="img/sprite_auto.svg#logo"></use>
               </svg>
             </a>
-            <a href="#" class="main-nav__link main-nav__link--login menu">Login</a>
+            <a href="login.html" class="main-nav__link main-nav__link--login menu">Login</a>
             <a href="#" class="main-nav__link main-nav__link--cart">
               <svg class="" width="20" height="18" viewBox="0 0 20 18">
                 <use xlink:href="img/sprite_auto.svg#cart"></use>
@@ -40,7 +42,7 @@
             </a>
             <ul class="main-nav__list list-reset menu">
               <li>
-                <a href="#">What's new</a>
+                <a href="catalog.html">What's new</a>
               </li>
               <li>
                 <a href="#">Chokers</a>
@@ -220,7 +222,7 @@
             <div class="blog__container">
 
               <div class="blog__left-column">
-                <article>
+                <article class="blog__article">
                   <div class="blog__article-image">
                     <picture>
                       <img src="img/content/index/blog/blog-care-desktop.jpg" width="285" height="300" alt="Care for Jewellery">
@@ -232,7 +234,7 @@
                     <a class="outline-link" href="#">Read Article</a>
                   </div>
                 </article>
-                <article>
+                <article class="blog__article blog__article--crystals">
                   <div class="blog__article-image">
                     <img src="img/content/index/blog/blog-power-desktop.jpg" width="285" height="300" alt="Power of crystals">
                   </div>
@@ -321,7 +323,7 @@
             <p>News and updates from CH. No spam, we promise.</p>
             <form>
               <label for="email" class="visually-hidden">Your E-mail</label>
-              <input type="email" name="email" id="email" placeholder="Your E-mail">
+              <input type="email" name="email" id="email" placeholder="Your E-mail" required>
               <button type="submit">Sign Up</button>
             </form>
           </div>
@@ -388,46 +390,30 @@
       </footer>
     </div>
 
-    <!-- Модалки -->
-    <div class="modal modal--preload" data-modal="feedback">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
+    <section class="login login--modal">
+      <h2>Log In</h2>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <div class="login__field login__field--email">
+          <label class="visually-hidden" for="login-email">Enter your e-mail</label>
+          <input id="login-email" type="email" name="login-email" placeholder="Your E-mail" required>
         </div>
-      </div>
-    </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
+        <div class="login__field">
+          <label class="visually-hidden" for="login-password">Enter your password</label>
+          <input id="login-password" type="password" name="login-password" placeholder="Password" required>
         </div>
-      </div>
-    </div>
+        <div class="login__forgot-password">
+          <a href="#">Forgot your password?</a>
+        </div>
+        <button class="button" type="submit">Log In</button>
+        <div class="login__signup">
+          <span>Don't have an account?</span>
+          <a href="#">Sign up</a>
+        </div>
+      </form>
+      <button class="login__close" type="button"></button>
+    </section>
 
-    <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
-
-<!--         <section class="intro">
-          <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
-          </div>
-        </section> -->

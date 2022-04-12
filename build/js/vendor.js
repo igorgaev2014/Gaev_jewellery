@@ -10267,4 +10267,4 @@ var swiper = function swiper() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=vendor.min.js.map
+//# sourceMappingURL=vendor.js.map

@@ -1,0 +1,257 @@
+.login {
+  position: relative;
+  max-width: 430px;
+  padding: 138px 45px 53px;
+  background: $desert-storm;
+  margin: 40px auto;
+  z-index: 200;
+
+  @include vp-1023 {
+    max-width: 450px;
+    padding: 138px 50px 53px;
+  }
+
+  @include vp-767 {
+    max-width: 270px;
+    padding: 85px 15px 39px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $desert-storm url("../img/content/login@1x.jpg") no-repeat center / cover;
+    width: 100%;
+    height: 138px;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/content/login@2x.jpg");
+    }
+
+    @include vp-767 {
+      height: 84px;
+    }
+  }
+}
+
+.login--modal {
+  display: none;
+  max-height: 100vh;
+  margin: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login--is-opened {
+  display: block;
+}
+
+.login__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+
+  @include vp-1023 {
+    top: 12px;
+    right: 12px;
+  }
+
+  @include vp-767 {
+    top: 5px;
+    right: 5px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+    background: $color-wood-bark;
+
+    @include vp-1023 {
+      width: 25px;
+      height: 3px;
+    }
+
+    @include vp-767 {
+      width: 17px;
+      height: 2px;
+    }
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:focus {
+    background: $zorba;
+
+    &::before {
+      background: $color-default-white;
+    }
+
+    &::after {
+      background: $color-default-white;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.login h2 {
+  margin: 0;
+  padding: 50px 50px 24px;
+  font-family: $ff-secondary;
+  text-align: center;
+  font-size: 34px;
+  padding-top: 64px;
+  padding-bottom: 30px;
+
+  @include vp-767 {
+    padding: 37px 50px 18px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.login__field input {
+  min-width: 340px;
+  padding: 11px 0;
+  width: 100%;
+  font-family: inherit;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid $color-wood-bark;
+  border-radius: 0;
+  outline: none;
+  font-size: 14px;
+
+  @include vp-767 {
+    min-width: 240px;
+  }
+
+  &::placeholder {
+    color: $zorba;
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $medium-wood;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: $medium-wood;
+  }
+}
+
+.login__field--email input {
+  margin-bottom: 26px;
+
+  @include vp-767 {
+    margin-bottom: 21px;
+  }
+}
+
+.login__forgot-password {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login__forgot-password a {
+  display: block;
+  padding: 5px 1px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $zorba;
+  text-align: right;
+
+  &:hover,
+  &:focus {
+    color: $color-wood-bark;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.login button[type="submit"] {
+  margin-top: 41px;
+  margin-bottom: 14px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    opacity: 0.7;
+  }
+
+  @include vp-767 {
+    margin-top: 30px;
+  }
+}
+
+.login__signup {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login__signup span {
+  color: $zorba;
+  margin-right: 8px;
+
+  @include vp-1023 {
+    margin-right: 5px;
+  }
+}
+
+.login__signup a {
+  color: $color-wood-bark;
+  margin-right: 6px;
+
+  @include vp-1023 {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $medium-wood;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

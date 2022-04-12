@@ -153,20 +153,22 @@ var slider = document.querySelector('.slider');
 var accordion = document.querySelectorAll('.faq li');
 var filter = document.querySelector('.filter');
 var overlay = document.createElement('div');
+var login = document.querySelector('.login');
+var loginButton = document.querySelector('.main-nav__link--login');
 overlay.classList.add('overlay');
 header.classList.remove('header--no-js'); // Мобильное меню
 
-function openMenu() {
+var openMenu = function openMenu() {
   header.classList.remove('header--is-close');
   header.classList.add('header--is-open');
   page.classList.add('overflow');
-}
+};
 
-function closeMenu() {
+var closeMenu = function closeMenu() {
   header.classList.remove('header--is-open');
   header.classList.add('header--is-close');
   page.classList.remove('overflow');
-}
+};
 
 navButton.addEventListener('click', function () {
   if (header.classList.contains('header--is-close')) {
@@ -275,7 +277,70 @@ accordion.forEach(function (elem) {
       elem.classList.add('faq__item--is-open');
     }
   });
-});
+}); // Логин
+
+if (login) {
+  var loginForm = login.querySelector('form');
+  var loginClose = login.querySelector('.login__close');
+  var loginEmail = login.querySelector('input[type="email"]');
+  var loginPassword = login.querySelector('input[type="password"]');
+  var isStorageSupport = true;
+  var storageEmail = '';
+
+  try {
+    storageEmail = localStorage.getItem('user-email');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  if (storageEmail) {
+    loginEmail.value = storageEmail;
+  }
+
+  var openLogin = function openLogin() {
+    login.classList.add('login--is-opened');
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    if (!loginEmail.value) {
+      loginEmail.focus();
+    } else {
+      loginPassword.focus();
+    }
+  };
+
+  var closeLogin = function closeLogin() {
+    login.classList.remove('login--is-opened');
+    document.body.removeChild(overlay);
+    document.body.style.overflow = 'auto';
+  };
+
+  loginButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    openLogin();
+  });
+  loginClose.addEventListener('click', function () {
+    return closeLogin();
+  });
+  overlay.addEventListener('click', function () {
+    return closeLogin();
+  });
+  window.addEventListener('keydown', function (evt) {
+    if (evt.key === ('Escape' || false)) {
+      if (login.classList.contains('login--is-opened')) {
+        evt.preventDefault();
+        closeLogin();
+      }
+    }
+  });
+  loginForm.addEventListener('submit', function () {
+    closeLogin();
+
+    if (isStorageSupport) {
+      localStorage.setItem('user-email', loginEmail.value);
+    }
+  });
+}
 
 /***/ }),
 
@@ -10411,4 +10476,4 @@ var swiper = function swiper() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.min.js.map
+//# sourceMappingURL=main.js.map
