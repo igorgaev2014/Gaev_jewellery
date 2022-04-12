@@ -77,11 +77,11 @@
         </section>
         <div class="container page-main__wrapper">
           <section class="filter filter--no-js">
-            <button class="button filter__button">Filter</button>
+            <button class="button filter__button" type="button">Filter</button>
             <div class="filter__wrapper">
               <button class="filter__close" type="button"></button>
               <form action="https://echo.htmlacademy.ru" method="get">
-                <ul class="filter__accordion list-reset">
+                <ul class="filter__accordion accordion list-reset">
                   <li class="filter__type">
                     <h3>
                       <button class="filter__type-button accordion__button" type="button">Product</button>
@@ -112,11 +112,11 @@
                     <ul class="filter__content list-reset">
                       <li>
                         <input class="visually-hidden" type="checkbox" name="gold" id="material-gold" checked>
-                        <label class="filter__label" for="product-gold">Gold</label>
+                        <label class="filter__label" for="material-gold">Gold</label>
                       </li>
                       <li>
                         <input class="visually-hidden" type="checkbox" name="silver" id="material-silver" checked>
-                        <label class="filter__label" for="product-silver">Silver</label>
+                        <label class="filter__label" for="material-silver">Silver</label>
                       </li>
                     </ul>
                   </li>
@@ -144,14 +144,14 @@
                         <div class="filter__bar"></div>
                       </div>
                       <div class="filter__price-wrapper filter__price-wrapper--min">
-                        <button class="filter__toggle" type="button" aria-label="Lowest price"></button>
+                        <button class="filter__toggle" type="button"></button>
                         <div class="filter__price-output">
                           <label class="visually-hidden" for="lowest-price">Lowest price</label>
                           $&nbsp;<input id="lowest-price" type="number" name="min-price" value="55">
                         </div>
                       </div>
                       <div class="filter__price-wrapper filter__price-wrapper--max">
-                        <button class="filter__toggle" type="button" aria-label="Highest price"></button>
+                        <button class="filter__toggle" type="button"></button>
                         <div class="filter__price-output">
                           <label class="visually-hidden" for="highest-price">Highest price</label>
                           $&nbsp;<input id="highest-price" type="number" name="max-price" value="155">

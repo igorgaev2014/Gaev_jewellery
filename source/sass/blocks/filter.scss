@@ -40,6 +40,10 @@
     transform: translate(0, -50%);
     z-index: 100;
   }
+
+  @include vp-767 {
+    top: -279px;
+  }
 }
 
 .filter__accordion {
@@ -71,20 +75,76 @@
 
 .filter__close {
   display: none;
+
+  @include vp-1023 {
+    display: block;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 32px;
+    height: 32px;
+    background: $color-wood-bark;
+    border-radius: 50%;
+    border: 0;
+    z-index: 100;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 18px;
+      height: 2px;
+      background: $color-default-white;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include vp-767 {
+    right: -11px;
+  }
 }
 
 .filter__type {
   border: 1px solid $medium-wood;
   border-top: none;
+
+  @include vp-1023 {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .filter__type:first-child {
   border-top: 1px solid $medium-wood;
+
+  @include vp-1023 {
+    border-top: none;
+  }
 }
 
 .filter__type ul {
   padding: 0 0 13px;
   margin: 0;
+
+  @include vp-1023 {
+    padding-bottom: 21px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 11px;
+  }
 }
 
 .filter__type-button {
@@ -96,6 +156,27 @@
   &::after {
     top: 31px;
     right: 26px;
+
+    @include vp-1023 {
+      top: 44px;
+      right: 43px;
+    }
+
+    @include vp-767 {
+      top: 34px;
+      right: 23px;
+    }
+  }
+
+  @include vp-1023 {
+    font-size: 18px;
+    padding-top: 36px;
+    padding-bottom: 23px;
+  }
+
+  @include vp-767 {
+    padding-top: 26px;
+    padding-left: 20px;
   }
 }
 
@@ -113,6 +194,16 @@
   line-height: 18px;
   position: relative;
   cursor: pointer;
+
+  @include vp-1023 {
+    font-size: 16px;
+    padding-bottom: 18px;
+    padding-left: 29px;
+  }
+
+  @include vp-767 {
+    padding-left: 26px;
+  }
 }
 
 input + .filter__label::before {
@@ -124,6 +215,15 @@ input + .filter__label::before {
   height: 15px;
   border: 1px solid $medium-wood;
   background: $color-default-white;
+
+  @include vp-1023 {
+    width: 17px;
+    height: 17px;
+  }
+
+  @include vp-767 {
+    left: -3px;
+  }
 }
 
 input:checked + .filter__label::before {
@@ -134,12 +234,34 @@ input:checked + .filter__label::before {
   display: none;
 }
 
+.filter__type--is-closed .filter__range {
+  display: none;
+}
+
 .filter__form-buttons {
   padding-top: 33px;
+
+  @include vp-1023 {
+    padding-right: 40px;
+    padding-left: 25px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  @include vp-767 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 21px;
+    padding-right: 21px;
+  }
 }
 
 .filter__form-buttons button[type="submit"] {
   margin-bottom: 24px;
+
+  @include vp-767 {
+    margin-bottom: 18px;
+  }
 }
 
 .filter__form-buttons button[type="reset"] {
@@ -152,6 +274,20 @@ input:checked + .filter__label::before {
   max-width: 250px;
   padding: 5px 25px 49px;
   position: relative;
+
+  @include vp-1023 {
+    max-width: 361px;
+    padding-top: 12px;
+    padding-bottom: 70px;
+  }
+
+  @include vp-767 {
+    max-width: 260px;
+    padding-left: 5px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
 }
 
 .filter__scale {
@@ -165,6 +301,11 @@ input:checked + .filter__label::before {
   margin-left: 30%;
   height: 1px;
   background-color: $medium-wood;
+
+  @include vp-1023 {
+    margin-left: 24%;
+  }
+
 }
 
 .filter__price-wrapper {
@@ -173,14 +314,39 @@ input:checked + .filter__label::before {
   margin-bottom: 12px;
   font-size: 14px;
   line-height: 18px;
+
+  @include vp-1023 {
+    top: 5px;
+  }
+
+  @include vp-1023 {
+    top: 3px;
+  }
 }
 
 .filter__price-wrapper--min {
   left: 28%;
+
+  @include vp-1023 {
+    left: 23%;
+  }
+
+
+  @include vp-1023 {
+    left: 20%;
+  }
 }
 
 .filter__price-wrapper--max {
   left: 70%;
+
+  @include vp-1023 {
+    left: 71%;
+  }
+
+  @include vp-767 {
+    left: 73%;
+  }
 }
 
 .filter__toggle {
@@ -194,6 +360,11 @@ input:checked + .filter__label::before {
   border-radius: 50%;
   cursor: pointer;
   outline: 0;
+
+  @include vp-1023 {
+    width: 17px;
+    height: 17px;
+  }
 }
 
 .filter__price-output {
@@ -236,5 +407,65 @@ input:checked + .filter__label::before {
 .filter--no-js button {
   &::after {
     display: none;
+  }
+}
+
+.filter__wrapper {
+  @include vp-1023 {
+    display: none;
+    margin: 0 auto;
+    z-index: 100;
+    left: -3px;
+    right: 345px;
+    position: absolute;
+    top: -320px;
+    transform: none;
+    max-height: none;
+  }
+
+  @include vp-767 {
+    max-width: 450px;
+    left: 25px;
+    right: 25px;
+  }
+}
+
+.filter__wrapper form {
+  @include vp-1023 {
+    overflow-y: auto;
+    max-height: calc(100vh - 32px);
+    box-shadow: 0 5px 32px rgba(219, 213, 208, 0.24);
+  }
+}
+
+.filter__wrapper--opened {
+  @include vp-1023 {
+    display: block;
+  }
+}
+
+.filter__type--is-closed .accordion__button {
+  &::after {
+    transform: rotate(-45deg);
+    top: 24px;
+
+    @include vp-1023 {
+      top: 32px;
+    }
+
+    @include vp-767 {
+      top: 22px;
+      right: 22px;
+    }
+  }
+}
+
+.filter__type--is-closed .filter__type-button {
+  @include vp-1023 {
+    padding-bottom: 34px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 24px;
   }
 }

@@ -19,5 +19,10 @@
     border-left: 1px solid $medium-wood;
     border-bottom: 1px solid $medium-wood;
     transform: rotate(135deg);
+
+    @include vp-1023 {
+      width: 17px;
+      height: 17px;
+    }
   }
 }

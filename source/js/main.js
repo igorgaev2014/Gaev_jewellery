@@ -1,95 +1,138 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
 import './vendor.js';
 
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const navButton = header.querySelector('.main-nav__button');
-// const slider = document.querySelector('.slider');
+const slider = document.querySelector('.slider');
 const accordion = document.querySelectorAll('.faq li');
 const filter = document.querySelector('.filter');
+const overlay = document.createElement('div');
 
-// ---------------------------------
+overlay.classList.add('overlay');
+header.classList.remove('header--no-js');
 
-window.addEventListener('DOMContentLoaded', () => {
+// Мобильное меню
 
-  // Utils
-  // ---------------------------------
+function openMenu() {
+  header.classList.remove('header--is-close');
+  header.classList.add('header--is-open');
+  page.classList.add('overflow');
+}
 
-  iosVhFix();
+function closeMenu() {
+  header.classList.remove('header--is-open');
+  header.classList.add('header--is-close');
+  page.classList.remove('overflow');
+}
 
-  // Modules
-  // ---------------------------------
-  header.classList.remove('header--no-js');
-
-  // Мобильное меню
-  function openMenu() {
-    header.classList.remove('header--is-close');
-    header.classList.add('header--is-open');
-    page.classList.add('overflow');
+navButton.addEventListener('click', function () {
+  if (header.classList.contains('header--is-close')) {
+    openMenu();
+  } else {
+    closeMenu();
   }
+});
 
-  function closeMenu() {
-    header.classList.remove('header--is-open');
-    header.classList.add('header--is-close');
-    page.classList.remove('overflow');
-  }
+// Фильтр
 
-  navButton.addEventListener('click', function () {
-    if (header.classList.contains('header--is-close')) {
-      openMenu();
-    } else {
-      closeMenu();
+if (filter) {
+  filter.classList.remove('filter--no-js');
+  filter.addEventListener('click', (evt) => {
+    evt.target.closest('.filter__type').classList.toggle('filter__type--is-closed');
+  });
+
+  const filterOpen = filter.querySelector('.filter__button');
+  const filterBlock = filter.querySelector('.filter__wrapper');
+  const filterClose = filter.querySelector('.filter__close');
+  const filterForm = filter.querySelector('form');
+
+  const openFilter = () => {
+    filterBlock.classList.add('filter__wrapper--opened');
+    document.body.append(overlay);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeFilter = () => {
+    filterBlock.classList.remove('filter__wrapper--opened');
+    overlay.remove();
+    document.body.style.overflow = 'auto';
+  };
+
+  filterOpen.addEventListener('click', () => openFilter());
+  filterClose.addEventListener('click', () => closeFilter());
+  overlay.addEventListener('click', () => closeFilter());
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.key === ('Escape' || 'Esc')) {
+      evt.preventDefault();
+      closeFilter();
     }
   });
 
-
-  // filter.classList.remove('filter--no-js');
-
-  // Аккордеон
-  accordion.forEach(function (elem) {
-    const tab = elem.querySelector('.faq h3');
-
-    tab.addEventListener('click', function () {
-      if (elem.classList.contains('faq__item--is-open')) {
-        elem.classList.remove('faq__item--is-open');
-      } else {
-        accordion.forEach(function (item) {
-          item.classList.remove('faq__item--is-open');
-        });
-        elem.classList.add('faq__item--is-open');
-      }
-    });
+  filterForm.addEventListener('submit', () => {
+    closeFilter();
   });
+}
 
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', () => {
-    initModals();
+// Слайдер
+
+if (slider) {
+  slider.classList.remove('slider--nojs');
+
+  new Swiper('.swiper-container', {
+    mousewheel: true,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}">${index + 1}</span>`;
+      },
+    },
+    navigation: {
+      prevEl: '.swiper-button-custom-prev',
+      nextEl: '.swiper-button-custom-next',
+    },
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            return `${current} of ${total}`;
+          },
+        },
+      },
+    },
+  });
+}
+
+// Аккордеон
+
+accordion.forEach(function (elem) {
+  const tab = elem.querySelector('.faq h3');
+
+  tab.addEventListener('click', function () {
+    if (elem.classList.contains('faq__item--is-open')) {
+      elem.classList.remove('faq__item--is-open');
+    } else {
+      accordion.forEach(function (item) {
+        item.classList.remove('faq__item--is-open');
+      });
+      elem.classList.add('faq__item--is-open');
+    }
   });
 });
-
-// ---------------------------------
-
-// ❗❗❗ обязательно установите плагины eslint, stylelint, editorconfig в редактор кода.
-
-// привязывайте js не на классы, а на дата атрибуты (data-validate)
-
-// вместо модификаторов .block--active используем утилитарные классы
-// .is-active || .is-open || .is-invalid и прочие (обязателен нейминг в два слова)
-// .select.select--opened ❌ ---> [data-select].is-open ✅
-
-// выносим все в дата атрибуты
-// url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
-
-// для адаптивного JS используейтся matchMedia и addListener
-// const breakpoint = window.matchMedia(`(min-width:1024px)`);
-// const breakpointChecker = () => {
-//   if (breakpoint.matches) {
-//   } else {
-//   }
-// };
-// breakpoint.addListener(breakpointChecker);
-// breakpointChecker();
-
-// используйте .closest(el)
