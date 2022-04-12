@@ -2823,6 +2823,16 @@ input:checked + .filter__label::before {
   }
 }
 
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
+  .intro {
+    background-image: url("../../img/content/index/intro/intro-index-tablet@2x.jpg");
+  }
+
+  .intro--catalog {
+    background-image: url("../../img/content/catalog/intro/intro-catalog-tablet@2x.jpg");
+  }
+}
+
 @media (max-width: 767px) {
   .container {
     padding: 0 15px;
@@ -3254,6 +3264,14 @@ input:checked + .filter__label::before {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
+  .intro {
+    background-image: url("../../img/content/index/intro/intro-index-desktop@2x.jpg");
+  }
+
+  .intro--catalog {
+    background-image: url("../../img/content/catalog/intro/intro-catalog-desktop@2x.jpg");
+  }
+
   .login::before {
     background-image: url("../img/content/login@2x.jpg");
   }
