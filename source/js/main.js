@@ -81,13 +81,13 @@ if (filter) {
 if (slider) {
   slider.classList.remove('slider--no-js');
 
-  new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper-container', {
     mousewheel: true,
     spaceBetween: 30,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-      renderBullet: function (index, className) {
+      renderBullet(index, className) {
         return `<span class="${className}">${index + 1}</span>`;
       },
     },
@@ -113,7 +113,7 @@ if (slider) {
           el: '.swiper-pagination',
           clickable: true,
           type: 'custom',
-          renderCustom: function (swiper, current, total) {
+          renderCustom(swipe, current, total) {
             return `${current} of ${total}`;
           },
         },

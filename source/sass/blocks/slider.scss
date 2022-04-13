@@ -229,10 +229,10 @@
 }
 
 .slider--no-js .slider__wrapper {
-    overflow-x: auto;
-    padding: 15px 0 20px;
-    margin: -15px 0;
-  }
+  overflow-x: auto;
+  padding: 15px 0 20px;
+  margin: -15px 0;
+}
 
 .slider--no-js .slider__item {
   width: calc(100% / 4 - 90px / 4);

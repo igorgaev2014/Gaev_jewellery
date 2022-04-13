@@ -223,7 +223,7 @@ if (filter) {
 
 if (slider) {
   slider.classList.remove('slider--no-js');
-  new Swiper('.swiper-container', {
+  var swiper = new Swiper('.swiper-container', {
     mousewheel: true,
     spaceBetween: 30,
     pagination: {
@@ -255,7 +255,7 @@ if (slider) {
           el: '.swiper-pagination',
           clickable: true,
           type: 'custom',
-          renderCustom: function renderCustom(swiper, current, total) {
+          renderCustom: function renderCustom(swipe, current, total) {
             return "".concat(current, " of ").concat(total);
           }
         }
