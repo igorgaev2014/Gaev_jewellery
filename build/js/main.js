@@ -145,43 +145,76 @@ module.exports = function(originalModule) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor.js */ "./js/vendor.js");
+/* harmony import */ var _modules_accordion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordion.js */ "./js/modules/accordion.js");
+/* harmony import */ var _modules_accordion_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/filter.js */ "./js/modules/filter.js");
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_filter_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_login_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/login.js */ "./js/modules/login.js");
+/* harmony import */ var _modules_login_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_login_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _modules_menu_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/menu.js */ "./js/modules/menu.js");
+/* harmony import */ var _modules_menu_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_menu_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider.js */ "./js/modules/slider.js");
+/* harmony import */ var _modules_slider_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_js__WEBPACK_IMPORTED_MODULE_5__);
 
-var page = document.querySelector('.page');
-var header = document.querySelector('.header');
-var navButton = header.querySelector('.main-nav__button');
-var slider = document.querySelector('.slider');
-var accordion = document.querySelectorAll('.faq li');
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/accordion.js":
+/*!*********************************!*\
+  !*** ./js/modules/accordion.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var accordion = document.querySelector('.faq__list');
+
+if (accordion) {
+  accordion.classList.remove('faq__list--no-js');
+  var accordionItems = document.querySelectorAll('.faq li');
+  accordionItems.forEach(function (elem) {
+    var tab = elem.querySelector('.faq h3');
+    tab.addEventListener('click', function () {
+      if (elem.classList.contains('faq__item--is-open')) {
+        elem.classList.remove('faq__item--is-open');
+      } else {
+        accordionItems.forEach(function (item) {
+          item.classList.remove('faq__item--is-open');
+        });
+        elem.classList.add('faq__item--is-open');
+      }
+    });
+  });
+}
+
+/***/ }),
+
+/***/ "./js/modules/filter.js":
+/*!******************************!*\
+  !*** ./js/modules/filter.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
 var filter = document.querySelector('.filter');
-var overlay = document.createElement('div');
-var login = document.querySelector('.login');
-var loginButton = document.querySelector('.main-nav__link--login');
-overlay.classList.add('overlay');
-header.classList.remove('header--no-js'); // Мобильное меню
-
-var openMenu = function openMenu() {
-  header.classList.remove('header--is-close');
-  header.classList.add('header--is-open');
-  page.classList.add('overflow');
-};
-
-var closeMenu = function closeMenu() {
-  header.classList.remove('header--is-open');
-  header.classList.add('header--is-close');
-  page.classList.remove('overflow');
-};
-
-navButton.addEventListener('click', function () {
-  if (header.classList.contains('header--is-close')) {
-    openMenu();
-  } else {
-    closeMenu();
-  }
-}); // Фильтр
 
 if (filter) {
+  var overlay = document.createElement('div');
   filter.classList.remove('filter--no-js');
+  overlay.classList.add('overlay');
+  var filterButtons = filter.querySelectorAll('.filter__type-button');
+  var filterTypes = filter.querySelectorAll('.filter__type');
   filter.addEventListener('click', function (evt) {
-    evt.target.closest('.filter__type').classList.toggle('filter__type--is-closed');
+    filterButtons.forEach(function (button, index) {
+      if (filterButtons[index] === evt.target) {
+        evt.preventDefault();
+        filterTypes[index].classList.toggle('filter__type--is-closed');
+      }
+    });
   });
   var filterOpen = filter.querySelector('.filter__button');
   var filterBlock = filter.querySelector('.filter__wrapper');
@@ -218,68 +251,23 @@ if (filter) {
   filterForm.addEventListener('submit', function () {
     closeFilter();
   });
-} // Слайдер
+}
 
+/***/ }),
 
-if (slider) {
-  slider.classList.remove('slider--no-js');
-  var swiper = new Swiper('.swiper-container', {
-    mousewheel: true,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      renderBullet: function renderBullet(index, className) {
-        return "<span class=\"".concat(className, "\">").concat(index + 1, "</span>");
-      }
-    },
-    navigation: {
-      prevEl: '.swiper-button-custom-prev',
-      nextEl: '.swiper-button-custom-next'
-    },
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        slidesPerGroup: 4
-      },
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2
-      },
-      320: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'custom',
-          renderCustom: function renderCustom(swipe, current, total) {
-            return "".concat(current, " of ").concat(total);
-          }
-        }
-      }
-    }
-  });
-} // Аккордеон
+/***/ "./js/modules/login.js":
+/*!*****************************!*\
+  !*** ./js/modules/login.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-
-accordion.forEach(function (elem) {
-  var tab = elem.querySelector('.faq h3');
-  tab.addEventListener('click', function () {
-    if (elem.classList.contains('faq__item--is-open')) {
-      elem.classList.remove('faq__item--is-open');
-    } else {
-      accordion.forEach(function (item) {
-        item.classList.remove('faq__item--is-open');
-      });
-      elem.classList.add('faq__item--is-open');
-    }
-  });
-}); // Логин
+var login = document.querySelector('.login');
+var loginButton = document.querySelector('.main-nav__link--login');
 
 if (login) {
+  var overlay = document.createElement('div');
+  overlay.classList.add('overlay');
   var loginForm = login.querySelector('form');
   var loginClose = login.querySelector('.login__close');
   var loginEmail = login.querySelector('input[type="email"]');
@@ -338,6 +326,94 @@ if (login) {
 
     if (isStorageSupport) {
       localStorage.setItem('user-email', loginEmail.value);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./js/modules/menu.js":
+/*!****************************!*\
+  !*** ./js/modules/menu.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var page = document.querySelector('.page');
+var header = document.querySelector('.header');
+var navButton = header.querySelector('.main-nav__button');
+header.classList.remove('header--no-js');
+
+var openMenu = function openMenu() {
+  header.classList.remove('header--is-close');
+  header.classList.add('header--is-open');
+  page.classList.add('overflow');
+};
+
+var closeMenu = function closeMenu() {
+  header.classList.remove('header--is-open');
+  header.classList.add('header--is-close');
+  page.classList.remove('overflow');
+};
+
+navButton.addEventListener('click', function () {
+  if (header.classList.contains('header--is-close')) {
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
+
+/***/ }),
+
+/***/ "./js/modules/slider.js":
+/*!******************************!*\
+  !*** ./js/modules/slider.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var slider = document.querySelector('.slider');
+
+if (slider) {
+  slider.classList.remove('slider--no-js');
+  var swiper = new Swiper('.swiper-container', {
+    mousewheel: true,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function renderBullet(index, className) {
+        return "<span class=\"".concat(className, "\">").concat(index + 1, "</span>");
+      }
+    },
+    navigation: {
+      prevEl: '.swiper-button-custom-prev',
+      nextEl: '.swiper-button-custom-next'
+    },
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        slidesPerGroup: 4
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'custom',
+          renderCustom: function renderCustom(swipe, current, total) {
+            return "".concat(current, " of ").concat(total);
+          }
+        }
+      }
     }
   });
 }

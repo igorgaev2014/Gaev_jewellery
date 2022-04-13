@@ -1,7 +1,7 @@
 .intro {
   padding: 180px 0;
   background-color: $medium-wood;
-  background-image: url("../../img/content/index/intro/intro-index-desktop@1x.jpg");
+  background-image: url("../img/content/index/intro/intro-index-desktop@1x.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,16 +11,16 @@
 
 
   @media (min-resolution: $retina-dppx) {
-    background-image: url("../../img/content/index/intro/intro-index-desktop@2x.jpg");
+    background-image: url("../img/content/index/intro/intro-index-desktop@2x.jpg");
   }
 
   @include vp-1023 {
-    background-image: url("../../img/content/index/intro/intro-index-tablet@1x.jpg");
+    background-image: url("../img/content/index/intro/intro-index-tablet@1x.jpg");
     padding-top: 182px;
     padding-bottom: 184px;
 
     @media (min-resolution: $retina-dppx) {
-      background-image: url("../../img/content/index/intro/intro-index-tablet@2x.jpg");
+      background-image: url("../img/content/index/intro/intro-index-tablet@2x.jpg");
     }
   }
 
@@ -30,7 +30,7 @@
   }
 }
 
-.intro h2 {
+.intro h1 {
   text-transform: uppercase;
   font-size: 45px;
   line-height: 58px;
@@ -69,19 +69,19 @@
 
 .intro--catalog {
   padding: 85px 0 87px 0;
-  background-image: url("../../img/content/catalog/intro/intro-catalog-desktop@1x.jpg");
+  background-image: url("../img/content/catalog/intro/intro-catalog-desktop@1x.jpg");
 
   @media (min-resolution: $retina-dppx) {
-    background-image: url("../../img/content/catalog/intro/intro-catalog-desktop@2x.jpg");
+    background-image: url("../img/content/catalog/intro/intro-catalog-desktop@2x.jpg");
   }
 
   @include vp-1023 {
-    background-image: url("../../img/content/catalog/intro/intro-catalog-tablet@1x.jpg");
+    background-image: url("../img/content/catalog/intro/intro-catalog-tablet@1x.jpg");
     padding-top: 86px;
     padding-bottom: 86px;
 
     @media (min-resolution: $retina-dppx) {
-      background-image: url("../../img/content/catalog/intro/intro-catalog-tablet@2x.jpg");
+      background-image: url("../img/content/catalog/intro/intro-catalog-tablet@2x.jpg");
     }
   }
 
@@ -91,7 +91,7 @@
   }
 }
 
-.intro--catalog h2 {
+.intro--catalog h1 {
   font-size: 34px;
   letter-spacing: 0.01em;
   margin-bottom: -13px;

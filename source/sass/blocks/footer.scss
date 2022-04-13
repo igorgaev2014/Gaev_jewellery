@@ -87,7 +87,7 @@
   padding-right: 40px;
   border: none;
   cursor: pointer;
-  background-image: url("../../img/svg/sign-up-arrow.svg");
+  background-image: url("../img/svg/sign-up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 80px 5px;
   min-width: 110px;
@@ -211,15 +211,15 @@
 
 .footer__link--facebook {
   background-position: 3px 3px;
-  background-image: url("../../img/svg/social-facebook.svg");
+  background-image: url("../img/svg/social-facebook.svg");
 }
 
 .footer__link--instagram {
-  background-image: url("../../img/svg/social-instagram.svg");
+  background-image: url("../img/svg/social-instagram.svg");
 }
 
 .footer__link--pinterest {
-  background-image: url("../../img/svg/social-pinterest.svg");
+  background-image: url("../img/svg/social-pinterest.svg");
 
   @include vp-767 {
     margin-left: 8px;
@@ -227,7 +227,7 @@
 }
 
 .footer__link--twitter {
-  background-image: url("../../img/svg/social-twitter.svg");
+  background-image: url("../img/svg/social-twitter.svg");
   background-position: 0 6px;
 
   @include vp-767 {

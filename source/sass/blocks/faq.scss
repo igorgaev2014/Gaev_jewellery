@@ -86,7 +86,7 @@
     right: -3px;
     width: 19px;
     height: 19px;
-    background-image: url("../../img/svg/arrow-down.svg");
+    background-image: url("../img/svg/arrow-down.svg");
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
@@ -137,6 +137,21 @@
 
 .faq__item--is-open h3 {
   &::before {
-    background-image: url("../../img/svg/arrow-up.svg");
+    background-image: url("../img/svg/arrow-up.svg");
   }
+}
+
+.faq__list--no-js p {
+  display: block;
+}
+
+.faq__list--no-js h3 {
+  &::before {
+    display: none;
+  }
+}
+
+.faq button {
+  background: transparent;
+  border: none;
 }
