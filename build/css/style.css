@@ -916,6 +916,8 @@ body {
   top: 0;
   left: 0;
   z-index: 999;
+  background-color: #000000;
+  opacity: 0.5;
 }
 
 summary {
@@ -1599,20 +1601,22 @@ summary {
   margin-right: 50px;
 }
 
-.filter button:hover {
-  opacity: 0.5;
+.filter button:hover,
+.filter button:focus {
+  color: #a87b62;
 }
 
 .filter button:active {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
-.filter label:hover {
-  opacity: 0.5;
+.filter label:hover,
+.filter label:focus {
+  color: #a87b62;
 }
 
 .filter label:active {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .filter__accordion {
@@ -1686,6 +1690,21 @@ input:checked + .filter__label::before {
   background: #a87b62;
 }
 
+input + .filter__label:hover::before,
+input:focus + .filter__label::before {
+  border: 1px solid #000000;
+}
+
+input:checked + .filter__label:hover::before,
+input:checked:focus + .filter__label::before {
+  opacity: 0.6;
+}
+
+input + .filter__label:active::before,
+input:checked + .filter__label:active::before {
+  opacity: 0.5;
+}
+
 .filter__type--is-closed .filter__content {
   display: none;
 }
@@ -1702,10 +1721,20 @@ input:checked + .filter__label::before {
   margin-bottom: 24px;
 }
 
+.filter__form-buttons button[type="submit"]:focus,
+.filter__form-buttons button[type="submit"]:hover {
+  color: #000000;
+}
+
 .filter__form-buttons button[type="reset"] {
   background: #ffffff;
   border: 1px solid #a87b62;
   color: #000000;
+}
+
+.filter__form-buttons button[type="reset"]:focus,
+.filter__form-buttons button[type="reset"]:hover {
+  color: #a87b62;
 }
 
 .filter__range {
@@ -1972,12 +2001,9 @@ input:checked + .filter__label::before {
   font-weight: 500;
 }
 
-.footer input:hover {
-  opacity: 0.7;
-}
-
+.footer input:hover,
 .footer input:focus {
-  opacity: 0.5;
+  color: #a87b62;
 }
 
 .footer button {

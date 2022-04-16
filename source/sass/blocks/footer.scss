@@ -72,12 +72,9 @@
   font-family: $ff-primary;
   font-weight: 500;
 
-  &:hover {
-    opacity: 0.7;
-  }
-
+  &:hover,
   &:focus {
-    opacity: 0.5;
+    color: $medium-wood;
   }
 }
 
