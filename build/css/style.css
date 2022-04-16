@@ -2685,8 +2685,8 @@ input:checked + .filter__label:active::before {
   }
 
   .faq {
-    padding-bottom: 75px;
     padding-top: 19px;
+    padding-bottom: 60px;
   }
 
   .faq li {
@@ -3164,13 +3164,13 @@ input:checked + .filter__label:active::before {
 
   .faq li {
     padding-left: 25px;
-    padding-top: 16px;
+    padding-top: 17px;
     padding-bottom: 20px;
     padding-right: 23px;
   }
 
   .faq li:first-of-type h3 {
-    padding-right: 55px;
+    padding-right: 56px;
   }
 
   .faq h3 {
@@ -3191,6 +3191,13 @@ input:checked + .filter__label:active::before {
     margin: 14px 0 0;
     max-width: none;
     padding-right: 34px;
+  }
+
+  .faq__item button {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
   }
 
   .gallery {
