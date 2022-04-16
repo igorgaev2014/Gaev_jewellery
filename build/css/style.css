@@ -2083,11 +2083,15 @@ input:checked + .filter__label:active::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.footer__list li {
+  margin-bottom: 17px;
 }
 
 .footer__list--social {
@@ -2686,7 +2690,7 @@ input:checked + .filter__label:active::before {
 
   .faq {
     padding-top: 19px;
-    padding-bottom: 60px;
+    padding-bottom: 72px;
   }
 
   .faq li {
@@ -3156,6 +3160,10 @@ input:checked + .filter__label:active::before {
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 70px;
+  }
+
+  .faq {
+    padding-bottom: 60px;
   }
 
   .faq h2 {

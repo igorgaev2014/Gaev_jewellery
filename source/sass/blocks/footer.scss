@@ -167,15 +167,20 @@
 .footer__list {
   padding: 0;
   margin: 0;
-  //flex: 1 1 33.3%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: flex-start;
 
   @include vp-767 {
     margin-bottom: 38px;
   }
+}
+
+.footer__list li {
+  margin-bottom: 17px;
+
+
 }
 
 .footer__list--social {
