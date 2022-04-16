@@ -988,6 +988,8 @@ summary {
 .main-nav a {
   color: inherit;
   line-height: inherit;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .main-nav a:hover {
@@ -1057,11 +1059,11 @@ summary {
   font-size: 16px;
   line-height: 24px;
   margin: 0;
-  margin-top: 20px;
   position: relative;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 13px 0 17px 12px;
+  padding: 21px 0 17px 12px;
+  margin-top: 12px;
 }
 
 .main-nav__list::before {
@@ -2433,6 +2435,9 @@ input:checked + .filter__label:active::before {
 
   .main-nav a {
     margin: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
 
   .main-nav input {

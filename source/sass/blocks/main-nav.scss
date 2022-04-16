@@ -24,6 +24,7 @@
 .main-nav a {
   color: inherit;
   line-height: inherit;
+  align-self: flex-start;
 
   &:hover {
     opacity: 0.7;
@@ -35,6 +36,7 @@
 
   @include vp-1023 {
     margin: 0;
+    align-self: center;
   }
 }
 
@@ -169,10 +171,10 @@
   font-size: 16px;
   line-height: 24px;
   margin: 0;
-  margin-top: 20px;
   position: relative;
   flex-wrap: wrap;
-  padding: 13px 0 17px 12px;
+  padding: 21px 0 17px 12px;
+  margin-top: 12px;
 
   &::before {
     position: absolute;
