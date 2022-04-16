@@ -1542,6 +1542,10 @@ summary {
   border: none;
 }
 
+.faq__item button {
+  color: #1d1613;
+}
+
 .gallery {
   text-align: center;
   padding-bottom: 97px;
@@ -2018,6 +2022,7 @@ input:checked + .filter__label:active::before {
   background-repeat: no-repeat;
   background-position: 80px 5px;
   min-width: 110px;
+  font-weight: 500;
 }
 
 .footer button:hover {
@@ -3378,8 +3383,8 @@ input:checked + .filter__label:active::before {
   }
 
   .footer button {
-    min-width: 109px;
-    padding-right: 41px;
+    padding-right: 32px;
+    background-position: 92px 5px;
   }
 
   .footer__nav {
