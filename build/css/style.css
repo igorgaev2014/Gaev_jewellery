@@ -1064,6 +1064,9 @@ summary {
   flex-wrap: wrap;
   padding: 21px 0 17px 12px;
   margin-top: 12px;
+  -webkit-box-ordinal-group: 100;
+  -ms-flex-order: 99;
+  order: 99;
 }
 
 .main-nav__list::before {
