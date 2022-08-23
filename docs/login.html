@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jewellery">
+  <title>Jewellery - Login</title>
+  <link rel="shortcut icon" href="#">
+  <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Poppins-Bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/CormorantGaramond-Bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/CormorantGaramond-SemiBold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/CormorantGaramond-Italic.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/CormorantGaramond-MediumItalic.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header header--is-close">
+      <div class="container">
+        <nav class="main-nav">
+          <button class="main-nav__button" type="button">
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+          <form action="https://echo.htmlacademy.ru" method="get">
+            <label for="search" class="visually-hidden">Search</label>
+            <input type="search" name="search" id="search" placeholder="Type here to search" class="menu">
+          </form>
+          <a href="main.html" class="main-nav__link main-nav__link--logo">
+            <span class="visually-hidden">Главная</span>
+            <svg width="66" height="66" viewBox="0 0 66 66">
+              <use xlink:href="img/sprite_auto.svg#logo"></use>
+            </svg>
+          </a>
+          <a href="#" class="main-nav__link main-nav__link--login menu">Login</a>
+          <a href="#" class="main-nav__link main-nav__link--cart">
+            <svg class="" width="20" height="18" viewBox="0 0 20 18">
+              <use xlink:href="img/sprite_auto.svg#cart"></use>
+            </svg>
+            <span>Cart 0</span>
+          </a>
+          <ul class="main-nav__list list-reset menu">
+            <li>
+              <a href="catalog.html">What's new</a>
+            </li>
+            <li>
+              <a href="#">Chokers</a>
+            </li>
+            <li>
+              <a href="#">Necklaces</a>
+            </li>
+            <li>
+              <a href="#">Rings</a>
+            </li>
+            <li>
+              <a href="#">Earrings</a>
+            </li>
+          </ul>
+          <ul class="main-nav__sublist list-reset menu">
+            <li>
+              <a href="#">About CH</a>
+            </li>
+            <li>
+              <a href="#">Stores & Hours</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h1 class="visually-hidden">Jewellery Log In</h1>
+      <section class="login">
+        <h2>Log In</h2>
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <div class="login__field login__field--email">
+            <label class="visually-hidden" for="login-email">Enter your e-mail</label>
+            <input id="login-email" type="email" name="login-email" placeholder="Your E-mail" required>
+          </div>
+          <div class="login__field">
+            <label class="visually-hidden" for="login-password">Enter your password</label>
+            <input id="login-password" type="password" name="login-password" placeholder="Password" required>
+          </div>
+          <div class="login__forgot-password">
+            <a href="#">Forgot your password?</a>
+          </div>
+          <button class="button" type="submit">Log In</button>
+          <div class="login__signup">
+            <span>Don't have an account?</span>
+            <a href="#">Sign up</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__info">
+        <h2 class="title">The good stuff in your inbox</h2>
+        <p>News and updates from CH. No spam, we promise.</p>
+        <form>
+          <label for="email" class="visually-hidden">Your E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Your E-mail" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="footer__nav">
+        <ul class="footer__list list-reset">
+          <li class="footer__item">
+            <a href="#">Ordering & Payment</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Terms & Conditions</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Returns & Exchanges</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Delivery</a>
+          </li>
+        </ul>
+
+        <ul class="footer__list list-reset">
+          <li class="footer__item">
+            <a href="#">About CH</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Stores & Hours</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Jobs</a>
+          </li>
+
+          <li class="footer__item">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="footer__list footer__list--social list-reset">
+          <li>
+            <a class="footer__link footer__link--facebook" href="#">
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a class="footer__link footer__link--instagram" href="#">
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a class="footer__link footer__link--pinterest" href="#">
+              <span>Pinterest</span>
+            </a>
+          </li>
+          <li>
+            <a class="footer__link footer__link--twitter" href="#">
+              <span>Twitter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
